@@ -7,8 +7,10 @@ from modelo.categoria import *
 from modelo.tarifa import *
 from modelo.servicio import *
 from mysql.connector import errorcode
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app) 
 
 # pagina principal
 @app.route("/<nombre>")
