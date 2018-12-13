@@ -14,10 +14,9 @@ def listar_medico():
         payload = []
         content = {}
         for result in rv:
-            content = {'idMedico': result[0], 'primerNombre': result[1],
-                       'segundoNombre': result[2], 'primerApellido': result[3], 
-                       'segundoApellido': result[3], 'documento': result[3], 
-                       'especialidad': result[3], 'fechaNacimiento': result[3]}
+            content = {'idMedico': result[0], 'nombreCompleto': result[1],
+                       'documento': result[2], 'idCategoria': result[3], 
+                       'descripcionCategoria': result[4], 'fechaNacimiento': result[5]}
             payload.append(content)
             content = {}
         return jsonify(payload)

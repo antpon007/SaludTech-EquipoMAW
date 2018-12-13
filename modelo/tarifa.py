@@ -14,7 +14,7 @@ def listar_tarifas():
         payload = []
         content = {}
         for result in rv:
-            content = {'idtarifa': result[0], 'descripcion': result[1],'Médico': result[2], 'Precio': result[3]}
+            content = {'idtarifa': result[0], 'descripcion': result[1],'Medico': result[2], 'Precio': result[3]}
             payload.append(content)
             content = {}
         return jsonify(payload)

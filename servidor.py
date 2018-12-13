@@ -48,9 +48,20 @@ def listar_servicio():
         return json.dumps({'mensaje':str(e),'respuesta':'ER'}, sort_keys=True)
 
 # lista de usuarios
+@app.route("/medico")
+def listar_medicos():
+    try:
+        return listar_medico()
+    except Exception as e:
+        return json.dumps({'mensaje':str(e),'respuesta':'ER'}, sort_keys=True)
+
+# lista de usuarios
 @app.route("/usuario")
 def listar_usuarios():
-    return listar_usuario()
+    try:
+        return listar_usuario()
+    except Exception as e:
+        return json.dumps({'mensaje':str(e),'respuesta':'ER'}, sort_keys=True)
 
 ##--------------------
 ###Gestor de usuarios
@@ -161,7 +172,7 @@ except mysql.connector.Error as err:
     print(err)
 else:
     print("conexión exitosa")
-    app.run(debug=True)
+    app.run()
 
 
 
